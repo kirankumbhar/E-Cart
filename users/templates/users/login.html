@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Ecart Login</title>
-</head>
-<body>
+{% extends 'products/base.html' %}
+{% block content %}
+<br><br>
+<h3>Log In</h3>
 <form method="POST" action="{% url 'login' %}">
 	{% csrf_token %}
 	<label for="username">Username</label>
@@ -15,5 +13,4 @@
 	<button type="submit">Submit</button>
 
 </form>
-</body>
-</html>
+{% endblock %}

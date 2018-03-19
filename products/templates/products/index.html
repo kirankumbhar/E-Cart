@@ -1,4 +1,8 @@
 {% extends 'products/base.html' %}
 {% block content %}
-	<h3>Index page of website</h3>
+	{% load static %}
+	<br><br>
+	<div class="slider">
+		<img class="slider_images" src="{% static 'images/image2.jpg' %}">
+	</div>
 {% endblock %}

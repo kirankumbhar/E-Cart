@@ -4,5 +4,7 @@ from django.template import loader
 # Create your views here.
 def index(request):
 	template = loader.get_template('products/index.html');
-	return HttpResponse(template.render())
+	#homepage of website
+	return render(request,'products/index.html')
+
 
