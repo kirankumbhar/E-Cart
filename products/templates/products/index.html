@@ -3,6 +3,15 @@
 	{% load static %}
 	<br><br>
 	<div class="slider">
-		<img class="slider_images" src="{% static 'images/image2.jpg' %}">
+		<img class="img-responsive" style="max-width: 100%" src="{% static 'images/image2.jpg' %}">
+	</div>
+	<div>
+		{% for product in products %}
+			{{product.ProductID}}
+			{{product.ProductName}}
+			{{product.ProductPrice}}
+			{{product.ProductShortDesc}}
+			<br>
+		{% endfor %}
 	</div>
 {% endblock %}

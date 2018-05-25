@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from . models import Products
 # Create your views here.
 def index(request):
-	template = loader.get_template('products/index.html');
 	#homepage of website
-	return render(request,'products/index.html')
+	all_products = Products.objects.raw("select * from products")
+	context = {
+	 'products':all_products,
+	}
+	return render(request,'products/index.html',context)
 
 

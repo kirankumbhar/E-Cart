@@ -3,17 +3,25 @@
 {% load static %}
 <head>
 	<title>Ecart</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 	<style type="text/css">
-	.slider_images{
-		width: 1110px;
-		height:300px;
-	}
+		html,body{
+			margin: 0;
+		  	padding: 0;
+		  	height: 100%;
+		}
+		.maincontainer {
+			min-height:100%;
+			position:relative;
+		}
+		.body {
+			padding-bottom:70px;   /* Height of the footer */
+		}
 		.dropdown-span{
 			text-align: center;
 			color: white;
@@ -23,9 +31,10 @@
 			color: white;
 		}
 		.footer{
+			
+			height:70px;
 			text-align: center;
 			position: absolute;
-			padding:10px;
 			color: white;
 			width: 100%;
 			bottom:0;
@@ -38,18 +47,12 @@
 			text-decoration: none;
 			color: white;
 		}
-		#content{
-			padding-bottom: 5%;
+		.content{
+			
+			padding-bottom: 80px;
 		}
-		html,body{
-			margin: 0;
-		  	padding: 0;
-		  	height: 100%;
-		}
-		.wrapper{
-			position: relative;
-			min-height: 100%;
-        }
+		
+		
 	</style>
 	<script type="text/javascript">
 		function login(){
@@ -60,146 +63,151 @@
 		}
 	</script>
 </head>
-<body>
-	<div class="wrapper">
-		
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="{% url 'home' %}"><h2>E-Cart</h2></a>
+<body>	
+	<div class="maincontainer">
+		<div class="header">
+				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+						<a class="navbar-brand" href="{% url 'home' %}"><h2>E-Cart</h2></a>
+						
 			
-
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  	</button>
-
-		  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		  		<ul class="navbar-nav mr-auto">
-		  			<li class="nav-item dropdown">
-		  				 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				          Shop by Category
-				        </a>
-				        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-				        	<div class="table-responsive">
-				        		<table class="table">
-					        		<tr>
-					        			<th>
-					        				<div class="dropdown-span">
-								        		<span >Clothings</span>
-								        	</div>
-					        			</th>
-					        			<th>
-					        				<div class="dropdown-span">
-									          	<span>Computer</span>
-									        </div>
-					        			</th>
-					        			
-					        		</tr>
-					        		<tr>
-					        			<td><a class="dropdown-item" href="#">Men's Wear</a></td>
-					        			<td><a class="dropdown-item" href="#">Laptops</a></td>
-					        			
-					        				
-								    </tr>
-								    <tr>
-								    	<td><a class="dropdown-item" href="#">Women's Wear</a></td>
-								    	<td><a class="dropdown-item" href="#">PC parts</a></td>
-								    	
-								    </tr>
-								    <tr>
-								    	<td><a class="dropdown-item" href="#">kid's wear</a></td>
-								    	<td><a class="dropdown-item" href="#">Accessories</a></td>
-								    	
-								    </tr>     
-								</table>
-				        	</div>
-							<div class="table-responsive">
-								<table class="table">
-									<tr>
-										<th>
-											<div class="dropdown-span">
-										    	<span>Home appliances</span>
-										    </div>
-										</th>
-										<th>
-					        				<div class="dropdown-span">
-									          	<span>Bags</span>
-									        </div>
-					        			</th>
-									</tr>
-									
-									<tr>
-										<td><a class="dropdown-item" href="#">Refridgerator</a></td>
-										<td><a class="dropdown-item" href="#">Laptop bags</a></td>
-									</tr>
-									<tr>
-										<td><a class="dropdown-item" href="#">Washing MAchine</a></td>
-										<td><a class="dropdown-item" href="#">School bags</a></td>
-									</tr>
-									<tr>
-										<td><a class="dropdown-item" href="#">Oven</a></td>
-										<td><a class="dropdown-item" href="#">College sacks</a></td>
-									</tr>
-									<tr>
-										<td><a class="dropdown-item" href="#">Electronic items</a></td>
-										<td><a class="dropdown-item" href="#">Luggage bags</a></td>
-									</tr>
-								</table>
-							</div>
-				        </div>
-		  			</li>
-		  			<li class="nav-item active">
-			        	<a class="nav-link" href="#">Today's deals <span class="sr-only">(current)</span></a>
-			      	</li>
-			      	<li class="nav-item active">
-			        	<a class="nav-link" href="#">E-Wallet</a>
-			      	</li>
-		  			
-		  		</ul>
-
-		  		<ul class="navbar-nav navbar-right">
-		  			<li class="nav-item">
-						<form class="navbar-form" method="GET" action="#">
-							
-							<div class="input-group">
-								<label for="search"></label>
-								<input class="form-control pull-right" style="border-radius: 5px; width: 250px " id="searchbox" type="text" name="search" placeholder="Search for products">
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+						  </button>
+			
+						  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+							  <ul class="navbar-nav mr-auto">
+								  <li class="nav-item dropdown">
+									   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									  Shop by Category
+									</a>
+									<div class="dropdown-menu " aria-labelledby="navbarDropdown">
+										<div class="table-responsive">
+											<table class="table">
+												<tr>
+													<th>
+														<div class="dropdown-span">
+															<span >Clothings</span>
+														</div>
+													</th>
+													<th>
+														<div class="dropdown-span">
+															  <span>Computer</span>
+														</div>
+													</th>
+													
+												</tr>
+												<tr>
+													<td><a class="dropdown-item" href="#">Men's Wear</a></td>
+													<td><a class="dropdown-item" href="#">Laptops</a></td>
+													
+														
+												</tr>
+												<tr>
+													<td><a class="dropdown-item" href="#">Women's Wear</a></td>
+													<td><a class="dropdown-item" href="#">PC parts</a></td>
+													
+												</tr>
+												<tr>
+													<td><a class="dropdown-item" href="#">kid's wear</a></td>
+													<td><a class="dropdown-item" href="#">Accessories</a></td>
+													
+												</tr>     
+											</table>
+										</div>
+										<div class="table-responsive">
+											<table class="table">
+												<tr>
+													<th>
+														<div class="dropdown-span">
+															<span>Home appliances</span>
+														</div>
+													</th>
+													<th>
+														<div class="dropdown-span">
+															  <span>Bags</span>
+														</div>
+													</th>
+												</tr>
+												
+												<tr>
+													<td><a class="dropdown-item" href="#">Refridgerator</a></td>
+													<td><a class="dropdown-item" href="#">Laptop bags</a></td>
+												</tr>
+												<tr>
+													<td><a class="dropdown-item" href="#">Washing MAchine</a></td>
+													<td><a class="dropdown-item" href="#">School bags</a></td>
+												</tr>
+												<tr>
+													<td><a class="dropdown-item" href="#">Oven</a></td>
+													<td><a class="dropdown-item" href="#">College sacks</a></td>
+												</tr>
+												<tr>
+													<td><a class="dropdown-item" href="#">Electronic items</a></td>
+													<td><a class="dropdown-item" href="#">Luggage bags</a></td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								  </li>
+								  <li class="nav-item active">
+									<a class="nav-link" href="#">Today's deals <span class="sr-only">(current)</span></a>
+								  </li>
+								  <li class="nav-item active">
+									<a class="nav-link" href="#">E-Wallet</a>
+								  </li>
+								  
+							  </ul>
+			
+							  <ul class="navbar-nav navbar-right">
+								  <li class="nav-item">
+									<form class="navbar-form" method="GET" action="#">
+										
+										<div class="input-group">
+											<label for="search"></label>
+											<input class="form-control pull-right" style="border-radius: 5px; width: 250px " id="searchbox" type="text" name="search" placeholder="Search for products">
+											&nbsp&nbsp
+											<button class="btn" type="submit">
+												<img src="/static/images/search.png">
+											</button>	
+										</div>	
+									</form>
+								</li>
 								&nbsp&nbsp
-								<button class="btn" type="submit">
-									<img src="/static/images/search.png">
-								</button>	
-							</div>	
-						</form>
-					</li>
-					&nbsp&nbsp
-					{% if "username" in request.session %}
-						<li class="nav-item active">
-							<span class="nav-link">Hello {{ request.session.username }} </span>
-						</li>
-						<li class="nav-item active">
-							<a href="{% url 'user_profile' %}" class="nav-link">Your Profile</a>
-						</li>
-						<li class="nav-item">
-							<button class="btn btn-info" onclick="logout();">Log Out</button>
-						</li>
-					{% else %}
-			  		<li class="nav-item">
-			  			<button class="btn btn-info" onclick="login();" >Sign In</button>
-			  		</li>
-			  		{% endif %}
-		  			
-		  	</ul>
-		  	</div>
-
-		</nav>
-		<div id="content" class="container">
+								{% if "username" in request.session %}
+									<li class="nav-item active">
+										<span class="nav-link">Hello {{ request.session.username }} </span>
+									</li>
+									<li class="nav-item active">
+										<a href="{% url 'user_profile' %}" class="nav-link">Your Profile</a>
+									</li>
+									<li class="nav-item">
+										<button class="btn btn-info" onclick="logout();">Log Out</button>
+									</li>
+								{% else %}
+								  <li class="nav-item">
+									  <button class="btn btn-info" onclick="login();" >Sign In</button>
+								  </li>
+								  {% endif %}
+								  
+						  </ul>
+						  </div>
+			
+					</nav>
+		</div>
+		<div class="body">
+			<div class="container">
 			{% block content %}
 
 			{% endblock %}
 		</div>
-		<div class="footer bg-dark">
-			<p>&copy E-Cart 2018</p>
-			<a class="alink" href="#">Privacy policy</a>&nbsp
-			<a class="alink" href="#">Contact us</a>
 		</div>
+		<div class="footer font-small bg-dark">
+				<p>&copy E-Cart 2018</p>
+				<a class="alink" href="#">Privacy policy</a>&nbsp
+				<a class="alink" href="#">Contact us</a>
+		</div>
+
 	</div>
+	
 </body>
 </html>
